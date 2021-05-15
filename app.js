@@ -4,14 +4,25 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+const hbs = require('hbs');
 
+var about = require('./app_server/routes/about');
+var contact = require('./app_server/routes/contact');
 var index = require('./app_server/routes/index');
+var meals = require('./app_server/routes/meals');
+var news = require('./app_server/routes/news');
+var rooms = require('./app_server/routes/rooms');
 var users = require('./app_server/routes/users');
+var travel = require('./app_server/routes/travel');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
+
+// register handlebars partials (https://www.npmjs.com/package/hbs)
+hbs.registerPartials(path.join(__dirname, 'app_server', 'views/partials'));
+
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
@@ -22,8 +33,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+app.use('/about', about);
+app.use('/contact', contact);
+app.use('/index', index);
+app.use('/meals', meals);
+app.use('/news', news);
+app.use('/rooms', rooms);
 app.use('/users', users);
+app.use('/travel', travel);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
