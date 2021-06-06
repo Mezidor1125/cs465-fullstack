@@ -7,14 +7,14 @@ var bodyParser = require('body-parser');
 const hbs = require('hbs');
 require('./app_server/models/db');
 
-var about = require('./app_server/routes/about');
-var contact = require('./app_server/routes/contact');
-var index = require('./app_server/routes/index');
-var meals = require('./app_server/routes/meals');
-var news = require('./app_server/routes/news');
-var rooms = require('./app_server/routes/rooms');
-var users = require('./app_server/routes/users');
-var travel = require('./app_server/routes/travel');
+var aboutRouter = require('./app_server/routes/about');
+var contactRouter = require('./app_server/routes/contact');
+var indexRouter = require('./app_server/routes/index');
+var mealsRouter = require('./app_server/routes/meals');
+var newsRouter = require('./app_server/routes/news');
+var roomsRouter = require('./app_server/routes/rooms');
+var usersRouter = require('./app_server/routes/users');
+var travelRouter = require('./app_server/routes/travel');
 
 var app = express();
 
@@ -34,14 +34,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/about', about);
-app.use('/contact', contact);
-app.use('/index', index);
-app.use('/meals', meals);
-app.use('/news', news);
-app.use('/rooms', rooms);
-app.use('/users', users);
-app.use('/travel', travel);
+app.use('/about', aboutRouter);
+app.use('/contact', contactRouter);
+app.use('/index', indexRouter);
+app.use('/meals', mealsRouter);
+app.use('/news', newsRouter);
+app.use('/rooms', roomsRouter);
+app.use('/users', usersRouter);
+app.use('/travel', travelRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
