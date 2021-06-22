@@ -18,7 +18,7 @@ JSON is a standardized way to format object data that can be easily read by Java
 
 ### Provide instances in the full stack process when you refactored code to improve functionality and efficiencies, and name the benefits that come from reusable user interface (UI) components.
 
-
+An instance that code was refactored to improve functionality and efficiency is that the trip card versus trip list components.  Having two seperate components that render the same information is inefficient, but having the each trip being rendered separately but part of the whole works better in the overall functionality of the site.  Reusing UI components is benificial because it decreases overall size of an application, makes the development process quicker, and decreases the chance of errors and vulnerabilities introduced into the system (provided the component is secure).
 
 ## Testing
 
@@ -33,3 +33,5 @@ In a full stack application, the methods of the website is what drives the funct
 ## Reflection
 
 ### How has this course helped you in reaching your professional goals? What skills have you learned, developed, or mastered in this course to help you become a more marketable candidate in your career field?
+
+This course has helped me immensely in terms of professional development.  With working full time and going to school full time, its been hard to really nail down what I wanted to go into after school, what languages interested me, and if I wanted to work front or back end in the developement world.  This course has helped me narrow down the direction I want to go career wise and what other skills I need to pursue to be competitive in the job market.  I think that the biggest skill that I have developed in this process is that I have gained a better understanding how different modules or components of code link together and how they can be used to build a finished product.  
