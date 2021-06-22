@@ -24,9 +24,11 @@ JSON is a standardized way to format object data that can be easily read by Java
 
 ### Methods for request and retrieval necessitate various types of API testing of endpoints, in addition to the difficulties of testing with added layers of security.
 
-
+There are a few ways of testing endpoints prior to adding security.  The first is by just going to the localhost web address for the API endpoint to see if the page successfully loads the data or what type of error it throws if an error occurs.  An application that tests HTTP requests like Postman is ideal however, because it can also take security measures and inputs into place to test endpoints that might be protected from unauthenitcated users.
 
 ### Explain your understanding of methods, endpoints, and security in a full stack application.
+
+In a full stack application, the methods of the website is what drives the functionality and dynamics of a webpage.  Methods like GET, POST, PUT, and DELETE are http requests that can be used to retrieve or modify the database so that the functionality can be implemented.  These are driven on the backend by using the functions of the database (.create, .findOne, .find, .findOneAndUpdate) to modify the database depending on the clients needs.  Endpoints are the results of the methods as seen by the admin or the client side of the application.  Endpoints should be tested so that they function how they should and display data properly or throw errors if an actual error occurs.  Security is another layer of code that is added to prevent unauthorized or unauthenticated users from accessing or modifying te database.  An example of this would be to add or edit a trip in the database.  These API endpoints need to be protected so that unauthorized users cant tamper with the database.
 
 ## Reflection
 
